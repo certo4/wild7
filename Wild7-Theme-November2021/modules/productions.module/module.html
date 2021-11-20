@@ -1,27 +1,45 @@
 {# Getting HubDB data #}
 {# https://app.hubspot.com/design-manager/5004811/modules/43594811709 #}
-{# TODO: set a value for list_type #}
+
+{% set parent = hubdb_table_rows(5308043) %}
+{% set child = hubdb_table_rows(parent.hs_path) %}
 
 <section class="productions-index">
   {% if dynamic_page_route_level == 0 %}
 
     {# Listing page #}
 
-    {% for row in hubdb_table_rows(5308043) %}
+    {% for row in parent %}
       <div class="productions-index__post" aria-label="{{ row.hs_name }}">
 
-      {# Featured image #}
+      {# Production image #}
       {% if row.image %}
-      <a class="productions-index__post-image-wrapper" href="{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
+      <a class="productions-index__post-image-wrapper" href="{{absolute_url}}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
         <img class="productions-index__post-image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.featured_image_alt_text }}" width="300">
       </a>
-    {% endif %}
+      {% endif %}
     
       </div>
   {% endfor %}
 
   {% elif dynamic_page_route_level == 1 %}
     {# Individual production page #}
+    {{ request.path|pprint }}
+    {% set parent_query = request.path|split('/') %}
+    {{ parent_query|pprint }}<br><br>
+    {% set parentpath = parent_query[1] %}
+    {{ parentpath|pprint }}
+    <br><br>    
+    {% set info = parent|selectattr('hs_path', 'equalto', parent_query[1]) %}
+    {{ info|pprint }}
+    <br><br>
+    {{ parent|pprint }}
+
+
+    {# Section with Production information #}
+
+
+    {# Movie-specific listing #}
 
   {% elif dynamic_page_route_level == 2 %}
     {# Each BTS, Social page #}
