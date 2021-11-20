@@ -1,0 +1,22 @@
+defaultPortal: wild7-dev
+portals:
+  - name: wild7
+    portalId: 1687305
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CLbhmdrRLxIOAA0AAAAA4A0AAAAAAEAYif5mINGN8AMo7ukMMhRXoCerIiJzz9Iqaelqjk8aNDbYAjovAAAEQQAAAHgAAAAAAAAAAAAAAAAAAAAEAADABwD-_zE8AAAAAAAAYAAAAAAAAAhCFLfAW-FGad8wE8ewTZ6FavsLKUw-SgNuYTFSAFoA
+        expiresAt: '2021-11-13T21:49:00.989Z'
+    personalAccessKey: >-
+      CiQyNGIyOTYzYi1hMjlhLTRkMzctYTM3Yy1jZDM4NzQ0MGEzYzMQif5mGNGN8AMqGQAF5pGCKKFKU4iYH0bFLxXSkb7Ifa3w_GlKA25hMQ
+  - name: wild7-dev
+    portalId: 20977602
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CPamhfbTLxIJAA0AAAAA4A0DGMKvgAog0Y3wAyju6QwyFGbm3oaMHW9MXIIKW2hvAWAAYjhBOigAAARBAAAAeAAAAAAAAAAAAAAAAAAAAAQAAMAHAP7_MTwAAAYAAABgQhQDX1-_je1kbrzvVQ57xW2TQRdiiUoDbmExUgBaAA
+        expiresAt: '2021-11-20T19:09:56.986Z'
+    personalAccessKey: >-
+      CiRlODg4ZTYwMC03NDVlLTRmM2EtYTIzMC00NGY1YmRhYmFjM2EQwq-AChjRjfADKhkABeaRgk8D7rCvYu8lxKAy88Rx-38-02PoSgNuYTE

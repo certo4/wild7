@@ -1,0 +1,8 @@
+[ {
+  "id" : "04aa676c-eca8-6799-3772-4b8d080284d9",
+  "name" : "hubdbtable",
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+} ]

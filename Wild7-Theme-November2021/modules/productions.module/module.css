@@ -1,0 +1,26 @@
+.productions-index {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productions-index__post {
+    flex: 0 0 100%;
+    padding: 1.4rem 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .productions-index__post {
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .productions-index__post {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+
+.blog-index__post-image {
+  height: auto;
+  max-width: 100%;
+}
