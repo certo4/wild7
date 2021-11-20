@@ -1,11 +1,17 @@
 .productions-index {
     display: flex;
     flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 1100px;
 }
 
 .productions-index__post {
     flex: 0 0 100%;
     padding: 1.4rem 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -17,6 +23,16 @@
 @media screen and (min-width: 1000px) {
   .productions-index__post {
     flex: 0 0 calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .productions-index {
+    max-width: 1400px;
+  }
+
+  .productions-index__post {
+    flex: 0 0 calc(100% / 4);
   }
 }
 

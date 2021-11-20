@@ -13,8 +13,7 @@
       {# Featured image #}
       {% if row.image %}
       <a class="productions-index__post-image-wrapper" href="{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
-      {{ row.name|pprint }}
-        <img class="productions-index__post-image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.featured_image_alt_text }}" width="365">
+        <img class="productions-index__post-image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.featured_image_alt_text }}" width="300">
       </a>
     {% endif %}
     
