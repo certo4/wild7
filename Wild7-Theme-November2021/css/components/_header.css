@@ -1,6 +1,12 @@
 
 /* Navigation skipper */
 
+header {
+  width: 100%;
+  position: fixed;
+  opacity: .9;
+}
+
 .header__skip {
   height: 1px;
   left: -1000px;
@@ -102,4 +108,3 @@
     padding: 1.05rem;
   }
 }
-

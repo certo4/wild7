@@ -2,7 +2,6 @@
 {# https://app.hubspot.com/design-manager/5004811/modules/43594811709 #}
 
 {% set parent = hubdb_table_rows(5308043) %}
-{% set child = hubdb_table_rows(parent.hs_path) %}
 
 <section class="productions-index">
   {% if dynamic_page_route_level == 0 %}
@@ -10,36 +9,47 @@
     {# Listing page #}
 
     {% for row in parent %}
-      <div class="productions-index__post" aria-label="{{ row.hs_name }}">
+    <div class="productions-index__post" aria-label="{{ row.hs_name }}">
 
-      {# Production image #}
-      {% if row.image %}
-      <a class="productions-index__post-image-wrapper" href="{{absolute_url}}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
-        <img class="productions-index__post-image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.featured_image_alt_text }}" width="300">
+      {# Production poster #}
+      {% if row.poster %}
+      <a class="productions-index__poster-wrapper" href="{{absolute_url}}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
+        <img class="productions-index__poster" src="{{ row.poster.url }}" loading="lazy" alt="{{ row.hs_name }}" width="300">
       </a>
       {% endif %}
     
-      </div>
-  {% endfor %}
+    </div>
+    {% endfor %}
 
   {% elif dynamic_page_route_level == 1 %}
-    {# Individual production page #}
-    {{ request.path|pprint }}
-    {% set parent_query = request.path|split('/') %}
-    {{ parent_query|pprint }}<br><br>
-    {% set parentpath = parent_query[1] %}
-    {{ parentpath|pprint }}
-    <br><br>    
-    {% set info = parent|selectattr('hs_path', 'equalto', parent_query[1]) %}
-    {{ info|pprint }}
-    <br><br>
-    {{ parent|pprint }}
 
+    {# Title #}
+    {% if dynamic_page_hubdb_row.title %}
+      <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
+    {% endif %}
+    
+    <div class="production__info-wrapper">
 
-    {# Section with Production information #}
+      {# Production Image #}
+      {% if dynamic_page_hubdb_row.image %}
+        <img class="production__image" src="{{ dynamic_page_hubdb_row.image.url }}" loading="lazy" alt="{{ dynamic_page_hubdb_row.hs_name }}">
+      {% endif %}
 
+      {# Production Details #}
+      {% if dynamic_page_hubdb_row.details %}
+        <div class="production__details">
+          {{ dynamic_page_hubdb_row.details }}
+        </div>
+      {% endif %}   
+    </div>
 
     {# Movie-specific listing #}
+
+    <div class="production-listing__wrapper">
+      <div>
+      Test
+      </div>
+    </div> 
 
   {% elif dynamic_page_route_level == 2 %}
     {# Each BTS, Social page #}
