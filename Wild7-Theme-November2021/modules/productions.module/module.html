@@ -25,30 +25,35 @@
 
     {# Title #}
     {% if dynamic_page_hubdb_row.title %}
-      <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
+    <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
     {% endif %}
     
-    {# <div class="production__info-wrapper"> #}
+    {# Production Image #}
+    {% if dynamic_page_hubdb_row.image %}
+    <img class="production__image" src="{{ dynamic_page_hubdb_row.image.url }}" loading="lazy" alt="{{ dynamic_page_hubdb_row.hs_name }}">
+    {% endif %}
 
-      {# Production Image #}
-      {% if dynamic_page_hubdb_row.image %}
-        <img class="production__image" src="{{ dynamic_page_hubdb_row.image.url }}" loading="lazy" alt="{{ dynamic_page_hubdb_row.hs_name }}">
-      {% endif %}
-
-      {# Production Details #}
-      {% if dynamic_page_hubdb_row.details %}
-        <div class="production__details">
-          {{ dynamic_page_hubdb_row.details }}
-        </div>
-      {% endif %}   
-    {# </div> #}
+    {# Production Details #}
+    {% if dynamic_page_hubdb_row.details %}
+    <div class="production__details">
+      {{ dynamic_page_hubdb_row.details }}
+    </div>
+    {% endif %}   
 
     {# Movie-specific listing #}
+    {% set options = hubdb_table_column(dynamic_page_hubdb_row.hs_child_table_id, 5).options %}
 
-    <div class="production-listing__wrapper">
-      <div>
-      Test
-      </div>
+    {# Side navigation #}
+      <div id="production-listing" class="production-listing">
+      <ul>
+        {% for option in options %}
+        <a href="#production-listing"><li class="type">{{ option.name }}</li></a>
+        {% endfor %}
+      </ul>
+      
+      {% for post in hubdb_table_rows(dynamic_page_hubdb_row.hs_child_table_id) %}
+      <a href="{{ absolute_url }}/{{post.hs_path}}"><li class="post">{{ post.hs_name }}</li></a>
+      {% endfor %}
     </div> 
 
   {% elif dynamic_page_route_level == 2 %}

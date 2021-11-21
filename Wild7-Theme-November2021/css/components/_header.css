@@ -108,3 +108,9 @@ header {
     padding: 1.05rem;
   }
 }
+
+/* Header padding for main content */
+
+#main-content {
+  padding-top: 180px;
+}
