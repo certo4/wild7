@@ -14,7 +14,7 @@
       {# Production poster #}
       {% if row.poster %}
       <a class="productions-index__poster-wrapper" href="{{absolute_url}}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
-        <img class="productions-index__poster" src="{{ row.poster.url }}" loading="lazy" alt="{{ row.hs_name }}" width="300">
+        <img class="productions-index__poster" src="{{ row.poster.url }}" loading="lazy" alt="{{ row.hs_name }}" width="250">
       </a>
       {% endif %}
     
@@ -28,7 +28,7 @@
       <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
     {% endif %}
     
-    <div class="production__info-wrapper">
+    {# <div class="production__info-wrapper"> #}
 
       {# Production Image #}
       {% if dynamic_page_hubdb_row.image %}
@@ -41,7 +41,7 @@
           {{ dynamic_page_hubdb_row.details }}
         </div>
       {% endif %}   
-    </div>
+    {# </div> #}
 
     {# Movie-specific listing #}
 
