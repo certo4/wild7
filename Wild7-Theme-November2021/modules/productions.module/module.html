@@ -42,17 +42,30 @@
 
     {# Movie-specific listing #}
     {% set options = hubdb_table_column(dynamic_page_hubdb_row.hs_child_table_id, 5).options %}
+    {% set options_param_list = [] %}
 
     {# Side navigation #}
-      <div id="production-listing" class="production-listing">
+    <div id="production-listing" class="production-listing">
       <ul>
+        <a href="{{ absolute_url }}/{{post.hs_path}}?type=show-all#production-listing"><li class="type">Show all</li></a>
         {% for option in options %}
-        <a href="#production-listing"><li class="type">{{ option.name }}</li></a>
+          {% do options_param_list.append(option.id) %}
+          <a href="{{ absolute_url }}/{{post.hs_path}}?type={{ option.id }}#production-listing"><li class="type">{{ option.name }}</li></a>
         {% endfor %}
       </ul>
       
-      {% for post in hubdb_table_rows(dynamic_page_hubdb_row.hs_child_table_id) %}
-      <a href="{{ absolute_url }}/{{post.hs_path}}"><li class="post">{{ post.hs_name }}</li></a>
+      {# Handling query parameters #}
+      {% set queryparam = "" %}
+      {% if request.query_dict.type in options_param_list %}
+          {% set queryparam = queryparam ~ "&type="~request.query_dict.type|urlencode %}
+      {% endif %}
+      {% if request.query_dict.type == "show-all" %}
+          {% set queryparam = queryparam %}
+      {% endif %}
+      
+      {# Listing #}
+      {% for post in hubdb_table_rows(dynamic_page_hubdb_row.hs_child_table_id, queryparam) %}
+        <a href="{{ absolute_url }}/{{post.hs_path}}"><li class="post">{{ post.hs_name }}</li></a>
       {% endfor %}
     </div> 
 
