@@ -70,8 +70,8 @@
     
           {# Production poster #}
           {% if row.image %}
-          <a class="production-posts__image-wrapper" href="{{absolute_url}}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
-            <img class="production-posts__image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.hs_name }}" width="250">
+          <a class="production-posts__image-wrapper" href="{{absolute_url}}/{{ row.hs_path }}" aria-label="Post image: {{ row.hs_name }}">
+            <img class="production-posts__image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.hs_name }}">
           </a>
           {% endif %}
         
