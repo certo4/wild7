@@ -45,28 +45,38 @@
     {% set options_param_list = [] %}
 
     {# Side navigation #}
-    <div id="production-listing" class="production-listing">
-      <ul>
-        <a href="{{ absolute_url }}/{{post.hs_path}}?type=show-all#production-listing"><li class="type">Show all</li></a>
-        {% for option in options %}
-          {% do options_param_list.append(option.id) %}
-          <a href="{{ absolute_url }}/{{post.hs_path}}?type={{ option.id }}#production-listing"><li class="type">{{ option.name }}</li></a>
-        {% endfor %}
-      </ul>
-      
-      {# Handling query parameters #}
-      {% set queryparam = "" %}
-      {% if request.query_dict.type in options_param_list %}
-          {% set queryparam = queryparam ~ "&type="~request.query_dict.type|urlencode %}
-      {% endif %}
-      {% if request.query_dict.type == "show-all" %}
-          {% set queryparam = queryparam %}
-      {% endif %}
+    <ul style="width: 100%;">
+      <a href="{{ absolute_url }}/{{post.hs_path}}?type=show-all#production-posts"><li class="type">Show all</li></a>
+      {% for option in options %}
+        {% do options_param_list.append(option.id) %}
+        <a href="{{ absolute_url }}/{{post.hs_path}}?type={{ option.id }}#production-posts"><li class="type">{{ option.name }}</li></a>
+      {% endfor %}
+    </ul>
+  
+    {# Handling query parameters #}
+    {% set queryparam = "" %}
+    {% if request.query_dict.type in options_param_list %}
+        {% set queryparam = queryparam ~ "&type="~request.query_dict.type|urlencode %}
+    {% endif %}
+    {% if request.query_dict.type == "show-all" %}
+        {% set queryparam = queryparam %}
+    {% endif %}
+    
+    <div id="production-posts" class="production-posts">
       
       {# Listing #}
-      {% for post in hubdb_table_rows(dynamic_page_hubdb_row.hs_child_table_id, queryparam) %}
-        <a href="{{ absolute_url }}/{{post.hs_path}}"><li class="post">{{ post.hs_name }}</li></a>
-      {% endfor %}
+      {% for row in hubdb_table_rows(dynamic_page_hubdb_row.hs_child_table_id, queryparam) %}
+        <div class="production-posts__post" aria-label="{{ row.hs_name }}">
+    
+          {# Production poster #}
+          {% if row.image %}
+          <a class="production-posts__image-wrapper" href="{{absolute_url}}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
+            <img class="production-posts__image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.hs_name }}" width="250">
+          </a>
+          {% endif %}
+        
+        </div>
+        {% endfor %}
     </div> 
 
   {% elif dynamic_page_route_level == 2 %}
