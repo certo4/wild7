@@ -7,33 +7,6 @@
     max-width: 700px;
 }
 
-.productions-index__post {
-    flex: 0 0 100%;
-    padding: 1px 2px;
-}
-
-.productions-index__poster {
-  height: auto;
-  max-width: 100%;
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .productions-index__post {
-    flex: 0 0 calc(100% / 3);
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .productions-index__post {
-    flex: 0 0 calc(100% / 3);
-    display: flex;
-    justify-content: center;
-  }
-}
-
 /* Production level */
 
 .production__title {
