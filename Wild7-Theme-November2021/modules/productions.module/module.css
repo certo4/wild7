@@ -52,6 +52,10 @@
   padding: 1rem 0;
 }
 
+.productions-index ul a {
+  font-family: 'Bebas Neue',cursive !important;
+}
+
 .production-posts {
   display: grid;
   grid-template-columns: repeat(3,1fr);

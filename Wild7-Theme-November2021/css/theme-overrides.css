@@ -165,7 +165,7 @@ a {
 
 a:hover,
 a:focus {
-  {{ anchor_font.style }};
+  {{ secondary_font.style }};
   color: {{ color_variant(anchor_font.color, -40) }};
 }
 
@@ -410,7 +410,7 @@ tfoot td {
 .header__language-switcher-label-current,
 .header__language-switcher .lang_list_class li a {
   color: {{ nav_font_color }};
-  font-family: {{ body_font.font }};
+  font-family: {{ secondary_font.font }};
 }
 
 .menu__child-toggle-icon {

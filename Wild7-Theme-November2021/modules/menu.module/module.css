@@ -288,3 +288,34 @@
     transition: transform 0.4s;
   }
 }
+
+.menu__item:nth-child(even):hover .menu__link,
+.menu__item:nth-child(even) .menu__link:active,
+.menu__item:nth-child(even) .menu__link:focus,
+.menu__item:nth-child(even) .menu__link--active-link,
+.menu__item:nth-child(even) .menu__link--active-branch {
+  color: #eb3744 !important;
+}
+
+.menu__item:nth-child(odd):hover .menu__link,
+.menu__item:nth-child(odd) .menu__link:active,
+.menu__item:nth-child(odd) .menu__link:focus,
+.menu__item:nth-child(odd) .menu__link--active-link,
+.menu__item:nth-child(odd) .menu__link--active-branch {
+  color: #73fbfd !important;
+}
+
+/* TODO: Remove underline on active branch 
+   and a:active styling */
+
+#hs_cos_wrapper_navigation-primary .menu .menu__item--depth-1>.menu__link--active-link:after {
+  background-color: transparent !important;
+}
+
+.menu__link:active { 
+  font-size: .917rem;
+  line-height: 1.667rem;
+  text-decoration: none;
+  font-family: Bebas Neue !important;
+  font-style: normal;
+}
