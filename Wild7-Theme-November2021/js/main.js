@@ -12,6 +12,10 @@
   // Variables
   var emailGlobalUnsub = document.querySelector('input[name="globalunsub"]');
   var mobileToggle = document.querySelector('.header__hamburger');
+  var mobileMenu = document.querySelector('.menu__main-menu');
+  var mobileCategoriesMenu = document.querySelector('.menu__feed-categories');
+  var frostedGlass = document.querySelector('.frosted-glass');
+  var headerContainer = document.querySelector('.header__container');
 
   // Functions
 
@@ -24,13 +28,22 @@
     }
   }
 
+  function mobileMenuLength() {
+    return mobileMenu.offsetHeight + headerContainer.offsetHeight;
+  }
+
   // Function for toggling mobile navigation
   function toggleNav() {
 
     mobileToggle.classList.toggle('is-active');
+    mobileMenu.classList.toggle('moved-up');
+    setTimeout(() => {mobileCategoriesMenu.classList.toggle('moved-up');}, 50);
+    frostedGlass.style.height = mobileMenuLength() + 'px';
+    var test = mobileMenuLength();
+    console.log(test);
+
 
   }
-
 
   // Function to disable the other checkbox inputs on the email subscription system page template
   function toggleDisabled() {

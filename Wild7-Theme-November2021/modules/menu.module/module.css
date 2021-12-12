@@ -131,20 +131,32 @@
 .menu--mobile {
   position: absolute;
   top: 0;
-  margin-top: 46px;
-  box-shadow: 0 0 25px 0 rgb(0 0 0 / 99%);
+  padding-top: 48px;
 }
 
-.menu--mobile .menu__wrapper {
+.menu__main-menu {
   background-color: black;
+  transition: 1.2s cubic-bezier(.075, .82, .165, 1);
+  -webkit-transition: 1.2s cubic-bezier(.075, .82, .165, 1);
+  box-shadow: 0 0 25px 0 rgb(0 0 0 / 99%);
+  z-index: 9;
 }
 
 .menu__feed-categories {
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0,0,0,.8);
   column-count: 3;
-
+  transition: 1.2s cubic-bezier(.075, .82, .165, 1);
+  -webkit-transition: 1.2s cubic-bezier(.075, .82, .165, 1);
+  box-shadow: 0 0 25px 0 rgb(0 0 0 / 99%);
+  z-index: -1;
 }
 
 .menu__feed-categories .menu__link {
   font-size: .8rem;
+}
+
+/* Hide nav menu */
+.moved-up {
+  transform: translateY(-150vw);
+  -webkit-transform:translateY(-150vw);
 }
