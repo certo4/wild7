@@ -58,10 +58,6 @@
     font-size: .9rem;
     text-align: center;
   }
-  
-  .frosted-glass {
-    height: 350px;
-  }
 }
 
 /* Menu items - top level */
@@ -149,6 +145,9 @@
   -webkit-transition: 1.2s cubic-bezier(.075, .82, .165, 1);
   box-shadow: 0 0 25px 0 rgb(0 0 0 / 99%);
   z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100vw;
 }
 
 .menu__feed-categories .menu__link {
@@ -159,4 +158,9 @@
 .moved-up {
   transform: translateY(-150vw);
   -webkit-transform:translateY(-150vw);
+}
+
+.frosted-glass-moved-up {
+  transform: translateY(-150vw);
+  -webkit-transform:translateY(-150vw); 
 }

@@ -13,7 +13,6 @@
   var emailGlobalUnsub = document.querySelector('input[name="globalunsub"]');
   var mobileToggle = document.querySelector('.header__hamburger');
   var mobileMenu = document.querySelector('.menu__main-menu');
-  var mobileCategoriesMenu = document.querySelector('.menu__feed-categories');
   var frostedGlass = document.querySelector('.frosted-glass');
   var headerContainer = document.querySelector('.header__container');
 
@@ -36,8 +35,16 @@
   function toggleNav() {
 
     mobileToggle.classList.toggle('is-active');
+    
     mobileMenu.classList.toggle('moved-up');
-    setTimeout(() => {mobileCategoriesMenu.classList.toggle('moved-up');}, 50);
+    // TODO: Frosted glass normal height
+
+    // TODO: If there's a mobile menu
+    if (document.querySelector('.menu__feed-categories')) {
+      var mobileCategoriesMenu = document.querySelector('.menu__feed-categories');
+      mobileCategoriesMenu.style.paddingTop = mobileMenuLength() + 'px';
+      setTimeout(() => {mobileCategoriesMenu.classList.toggle('moved-up');}, 100);
+    } 
     frostedGlass.style.height = mobileMenuLength() + 'px';
     var test = mobileMenuLength();
     console.log(test);
