@@ -87,7 +87,7 @@
     {% set options = hubdb_table_column(dynamic_page_hubdb_row.hs_child_table_id, 5).options %}
 
     {# Side navigation #}
-    <ul class="menu__feed-categories no-list moved-up">
+    <ul class="menu__feed-categories no-list moved-up2">
       <a href="{{ absolute_url }}/{{ post.hs_path }}?type=show-all#production-posts"><li class="menu__link">Show all</li></a>
       {% for option in options %}
         <a href="{{ absolute_url }}/{{ post.hs_path }}?type={{ option.id }}#production-posts"><li class="menu__link">{{ option.name }}</li></a>

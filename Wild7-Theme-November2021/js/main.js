@@ -60,7 +60,7 @@
       mobileCategoriesMenu.style.paddingTop = mobileMenuLength() + 'px';
       
       setTimeout(() => {
-        mobileCategoriesMenu.classList.toggle('moved-up');
+        mobileCategoriesMenu.classList.toggle('moved-up2');
         frostedGlassSecondary.classList.toggle('frosted-glass__animation2');
       }, 100);
     } 
