@@ -13,7 +13,8 @@
   var emailGlobalUnsub = document.querySelector('input[name="globalunsub"]');
   var mobileToggle = document.querySelector('.header__hamburger');
   var mobileMenu = document.querySelector('.menu__main-menu');
-  var frostedGlass = document.querySelector('.frosted-glass');
+  var frostedGlassMain = document.querySelector('.frosted-glass--mobile-main');
+  var frostedGlassSecondary = document.querySelector('.frosted-glass--mobile-categories');
   var headerContainer = document.querySelector('.header__container');
 
   // Functions
@@ -27,9 +28,21 @@
     }
   }
 
+  // Helper function to get length of main mobile menu
   function mobileMenuLength() {
     return mobileMenu.offsetHeight + headerContainer.offsetHeight;
   }
+
+  function setMobileFrostedGlassLength() {
+
+    frostedGlassMain.style.height = mobileMenuLength() + 'px';
+
+    if (document.querySelector('.menu__feed-categories')) {
+      var mobileCategoriesMenu = document.querySelector('.menu__feed-categories');
+      var newLength = mobileMenuLength() + mobileCategoriesMenu.offsetHeight;
+      frostedGlassSecondary.style.height = newLength + 'px';
+    }
+  };
 
   // Function for toggling mobile navigation
   function toggleNav() {
@@ -37,18 +50,20 @@
     mobileToggle.classList.toggle('is-active');
     
     mobileMenu.classList.toggle('moved-up');
-    // TODO: Frosted glass normal height
+    
+    frostedGlassMain.classList.toggle('frosted-glass__animation');
 
-    // TODO: If there's a mobile menu
+    // If there's a post feed
     if (document.querySelector('.menu__feed-categories')) {
+
       var mobileCategoriesMenu = document.querySelector('.menu__feed-categories');
       mobileCategoriesMenu.style.paddingTop = mobileMenuLength() + 'px';
-      setTimeout(() => {mobileCategoriesMenu.classList.toggle('moved-up');}, 100);
+      
+      setTimeout(() => {
+        mobileCategoriesMenu.classList.toggle('moved-up');
+        frostedGlassSecondary.classList.toggle('frosted-glass__animation2');
+      }, 100);
     } 
-    frostedGlass.style.height = mobileMenuLength() + 'px';
-    var test = mobileMenuLength();
-    console.log(test);
-
 
   }
 
@@ -75,6 +90,9 @@
     if (!document.body) {
       return;
     } else {
+
+      // Set mobile frosted glass lengths
+      // setMobileFrostedGlassLength();
 
       // Function dependent on mobile toggle
       if (mobileToggle) {

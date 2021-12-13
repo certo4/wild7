@@ -16,6 +16,43 @@
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
+.frosted-glass__animation2 {
+  /* transform: translateY(-150vw);
+  -webkit-transform:translateY(-150vw); */
+  transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
+  -webkit-transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
+  height: 355px !important;
+
+}
+
+.frosted-glass__animation {
+  /* transform: translateY(-150vw);
+  -webkit-transform:translateY(-150vw); */
+  transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
+  -webkit-transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
+  height: 275px !important;
+
+}
+
+.frosted-glass--mobile-main,
+.frosted-glass--mobile-categories {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 0px;
+  top: 0;
+  left: 0;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+@media (max-width: 767px) {
+  .frosted-glass--mobile-main,  
+  .frosted-glass--mobile-categories {
+    display: block;
+  }   
+}
+
 .header {
   width: 100%;
   height: 44px;
@@ -152,3 +189,4 @@
   }
 
 }
+

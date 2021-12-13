@@ -156,11 +156,6 @@
 
 /* Hide nav menu */
 .moved-up {
-  transform: translateY(-150vw);
-  -webkit-transform:translateY(-150vw);
-}
-
-.frosted-glass-moved-up {
-  transform: translateY(-150vw);
-  -webkit-transform:translateY(-150vw); 
+  transform: translateY(-125%);
+  -webkit-transform:translateY(-125%);
 }
