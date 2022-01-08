@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+body {
+  background-color: #26202c;
+}
+
+a {
+  font-family: 'Prata', serif;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.rsvp-content-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; 
+  font-family: 'Prata', serif;
+  color: white;
+  font-size: 20px;
+}
+
+.rsvp-cover {
+  width: auto;
+  height: 100vh;
+  min-height: 442px;
+  max-height: 800px;
+}
+
+.rsvp-logo {
+  width: auto;
+  height: 20vh;
+  min-height: 100px;
+  max-height: 400px;
+}
+
+.rsvp_content-cover {
+  min-height: 500px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  width: 100%;
+  color: #79317E;
+  background-image: url("https://fs.hubspotusercontent00.net/hubfs/20977602/rk-frames.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.rsvp_content__title {
+  text-align: center;
+  font-size: 80px;
+  margin: 0px;
+}
+
+.rsvp_content__date {
+  margin: 20px 0px;
+  font-size: 50px;
+}
+
+.rsvp_content__details {
+  margin: 20px 0px;
+  font-size: 30px;
+}
+
+.rsvp_content-details {
+  min-height: 500px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  width: 100%;
+  color: white;
+}
+
+.rsvp_content-details h2 {
+  margin: 80px 0px 0px 0px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.rsvp_content__arch-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.arch {
+  width: 330px;
+  height: 430px;
+}
+
+.line-break {
+  width: 100%;
+  display: none;
+}
+@media (max-width: 1000px) and (min-width: 701px) {
+  .line-break {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  .rsvp_content__arch-container {
+    flex-direction: column;
+  }
+  .arch {
+    width: 300px;
+    height: 400px;
+  }
+  .rsvp_content-details h2 {
+    margin: 80px 0px 0px 0px;
+    font-size: 30px;
+  }
+}
+
+.svg-sources {
+  display: none;
+}
+
+{###########################################################################}
+{###############################   Forms   #################################}
+{###########################################################################}
+
+/* Fields */
+
+.hs-form-field {
+  margin-bottom: 1.4rem;
+}
+
+form,
+.submitted-message {
+  font-family: 'Prata', serif; 
+  font-style: normal; 
+  font-weight: normal; 
+  text-decoration: none;
+  color: white;
+}
+
+/* Form title */
+
+.form-title {
+  color: #79317E;
+  text-align: center;
+  font-family: 'Prata', serif;
+}
+
+/* Labels */
+
+form label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+  color: white;
+  font-family: 'Prata', serif;
+  text-align: center;
+}
+
+/* Help text */
+
+form legend {
+  font-size: 0.65rem;
+  color: white;
+  font-family: 'Prata', serif;
+  text-align: center;
+}
+
+/* Inputs */
+
+form input[type=text],
+form input[type=email],
+form input[type=password],
+form input[type=tel],
+form input[type=number],
+form input[type=file],
+form select,
+form textarea {
+  border-color: #26202c;
+  display: inline-block;
+  font-size: 0.875rem;
+  background-color: #26202c;
+  color: white;
+  padding: 0.7rem;
+  /* width: 100%; */
+  -webkit-appearance: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: 'Prata', serif;
+  border: 1px solid #d5b053;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(213, 176, 83, 0.99);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(213, 176, 83, 0.99);
+  box-shadow: 0 0 10px 0 rgb(213 176 83 / 99%);
+  margin: 10px 5px;
+  border-collapse: separate;
+  text-align: center;
+}
+
+form fieldset {
+  max-width: 100% !important;
+}
+
+/* Form placeholder text */
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+::-moz-placeholder {
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+/* Inputs - checkbox/radio */
+
+form .inputs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form .inputs-list > li {
+  display: block;
+  margin: 0.7rem 0;
+}
+
+form .inputs-list input,
+form .inputs-list span {
+  vertical-align: middle;
+}
+
+form input[type=checkbox],
+form input[type=radio] {
+  cursor: pointer;
+  margin-right: 0.35rem;
+}
+
+/* Inputs - date picker */
+
+.hs-dateinput {
+  position: relative;
+}
+
+.hs-dateinput:before {
+  content:'\01F4C5';
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fn-date-picker .pika-table thead th {
+  color: #FFF;
+}
+
+.fn-date-picker td.is-selected .pika-button {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.fn-date-picker td .pika-button:hover,
+.fn-date-picker td .pika-button:focus {
+  border-radius: 0 !important;
+  color: #FFF;
+}
+
+/* Inputs - file picker */
+
+form input[type=file] {
+  background-color: transparent;
+  border: initial;
+  padding: initial;
+}
+
+/* Headings and text */
+
+form .hs-richtext,
+form .hs-richtext p {
+  font-size: 0.875rem;
+  margin: 0 0 1.4rem;
+  color: white;
+  font-family: 'Prata', serif;
+}
+
+form .hs-richtext img {
+  max-width: 100% !important;
+}
+
+/* GDPR */
+
+.legal-consent-container .hs-form-booleancheckbox-display > span,
+.legal-consent-container .hs-form-booleancheckbox-display > span p {
+  margin-left: 1rem !important;
+}
+
+/* Validation */
+
+.hs-form-required {
+  color: #EF6B51;
+}
+
+.hs-input.invalid.error {
+  border-color: #EF6B51;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(239, 107, 81, 0.99);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(239, 107, 81, 0.99);
+  box-shadow: 0 0 10px 0 rgb(239 107 81 / 99%);
+}
+
+.hs-error-msg {
+  color: #EF6B51;
+  margin-top: 0.35rem;
+}
+
+/* Submit button */
+
+form input[type=submit],
+form .hs-button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.15s linear;
+  white-space: normal;
+  font-family: 'Prata',serif;
+  width: 100%;
+  -webkit-appearance: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  padding: 0.7rem;
+  background-color: #d5b053;
+  border: none;
+  font-size: 0.875rem;
+}
+
+/* Captcha */
+
+.grecaptcha-badge {
+  margin: 0 auto;
+}

@@ -1,5 +1,11 @@
 /* Theme base styles */
 
+/* Background
+Defines the styling of the site background
+*/
+
+{% include './background/_site-background.css' %}
+
 /* Tools
 Any animations, or functions used throughout the project.
 Note: _macros.css needs to be imported into each stylesheet where macros are used and not included here
