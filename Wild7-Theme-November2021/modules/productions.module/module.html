@@ -37,7 +37,11 @@
     <div class="production__details">
       {{ dynamic_page_hubdb_row.details }}
     </div>
-    {% endif %}   
+    {% endif %}
+
+  </section>
+
+  <section class="production-posts-container">
 
     {# Movie-specific listing #}
     {% set options = hubdb_table_column(dynamic_page_hubdb_row.hs_child_table_id, 5).options %}
@@ -98,4 +102,5 @@
     {% endif %}  
 
   {% endif %}
+
 </section>

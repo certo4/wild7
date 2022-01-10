@@ -4,9 +4,22 @@
 {# Getting HubDB data #} 
 
 {% set parent = hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+{% set ray = [] %}
 
 <section class="productions-index">
   {% if dynamic_page_route_level == 0 %}
+
+    {% for row in parent %}
+      {% for post in hubdb_table_rows(row.hs_child_table_id)|sort(False, False, 'createdAt') %}
+        {{ post|pprint }}<br>
+        {# {% do ray.append(post) %} #}
+        
+      {% endfor %}
+    {% endfor %}
+
+    {{ ray|pprint }}
+
+
 
     {# Listing page #}
 
@@ -14,6 +27,7 @@
       <div id="production-posts" class="production-posts">
       
       {# Listing #}
+
       {% for post in hubdb_table_rows(row.hs_child_table_id) %}
         <div class="production-posts__post" aria-label="{{ post.hs_name }}">
     
@@ -30,6 +44,8 @@
 
 
     {% endfor %}
+
+    
 
   {% elif dynamic_page_route_level == 2 %}
 

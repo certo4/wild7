@@ -33,17 +33,6 @@
     return mobileMenu.offsetHeight + headerContainer.offsetHeight;
   }
 
-  function setMobileFrostedGlassLength() {
-
-    frostedGlassMain.style.height = mobileMenuLength() + 'px';
-
-    if (document.querySelector('.menu__feed-categories')) {
-      var mobileCategoriesMenu = document.querySelector('.menu__feed-categories');
-      var newLength = mobileMenuLength() + mobileCategoriesMenu.offsetHeight;
-      frostedGlassSecondary.style.height = newLength + 'px';
-    }
-  };
-
   // Function for toggling mobile navigation
   function toggleNav() {
 
@@ -65,6 +54,27 @@
       }, 100);
     } 
 
+  }
+
+  // Function to change location of lense flare
+  function flareMovement() {
+    let top = Math.floor(Math.random() * 81) + 10; 
+    let left = Math.floor(Math.random() * 81) + 10;
+
+    let topDiff = Math.floor(Math.random() * 30) + 5; 
+    let leftDiff = Math.floor(Math.random() * 30) + 5;
+
+    document.getElementById("dot").style.top = top + "%";
+    document.getElementById("dot").style.left = left + "%";
+
+    void document.getElementById("dot").offsetWidth;
+    void document.getElementById("dot").offsetHeight;
+
+    document.getElementById("dot-blue").style.top = top + topDiff + "%";
+    document.getElementById("dot-blue").style.left = left + leftDiff + "%";
+
+    void document.getElementById("dot-blue").offsetWidth;
+    void document.getElementById("dot-blue").offsetHeight;
   }
 
   // Function to disable the other checkbox inputs on the email subscription system page template
@@ -91,8 +101,8 @@
       return;
     } else {
 
-      // Set mobile frosted glass lengths
-      // setMobileFrostedGlassLength();
+      // Lense flare animation
+      // setInterval(flareMovement, 3000);
 
       // Function dependent on mobile toggle
       if (mobileToggle) {

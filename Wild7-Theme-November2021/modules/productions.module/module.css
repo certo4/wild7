@@ -1,13 +1,15 @@
-.productions-index {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: 0 auto;
-    justify-content: center;
-    max-width: 700px;
-    background: white;
-    border-radius: 5px;
-    padding: 10px;
+.productions-index,
+.production-posts-container  {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 700px;
+}
+
+.production-posts-container {
+  margin: 100px auto 0px auto;
 }
 
 .productions-index__post {
