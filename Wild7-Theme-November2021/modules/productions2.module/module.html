@@ -1,0 +1,106 @@
+{# Getting HubDB data #} 
+
+{% set parent = hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+
+<section class="productions-index">
+  {% if dynamic_page_route_level == 0 %}
+
+    {# Listing page #}
+
+    {% for row in parent %}
+    <div class="productions-index__post" aria-label="{{ row.hs_name }}">
+
+      {# Production poster #}
+      {% if row.poster %}
+      <a class="productions-index__poster-wrapper" href="{{ absolute_url }}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
+        <img class="productions-index__poster" src="{{ row.poster.url }}" loading="lazy" alt="{{ row.hs_name }}" width="250">
+      </a>
+      {% endif %}
+    
+    </div>
+    {% endfor %}
+
+  {% elif dynamic_page_route_level == 1 %}
+
+    {# Title #}
+    {% if dynamic_page_hubdb_row.title %}
+    <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
+    {% endif %}
+    
+    {# Production Image #}
+    {% if dynamic_page_hubdb_row.image %}
+    <img class="production__image" src="{{ dynamic_page_hubdb_row.image.url }}" loading="lazy" alt="{{ dynamic_page_hubdb_row.hs_name }}">
+    {% endif %}
+
+    {# Production Details #}
+    {% if dynamic_page_hubdb_row.details %}
+    <div class="production__details">
+      {{ dynamic_page_hubdb_row.details }}
+    </div>
+    {% endif %}
+
+  </section>
+
+  <section class="production-posts-container">
+
+    {# Movie-specific listing #}
+    {% set options = hubdb_table_column(dynamic_page_hubdb_row.hs_child_table_id, 5).options %}
+    {% set options_param_list = [] %}
+
+    {# Side navigation #}
+    <ul style="width: 100%;">
+      <a href="{{ absolute_url }}/{{ post.hs_path }}?type=show-all#production-posts"><li class="type">Show all</li></a>
+      {% for option in options %}
+        {% do options_param_list.append(option.id) %}
+        <a href="{{ absolute_url }}/{{ post.hs_path }}?type={{ option.id }}#production-posts"><li class="type">{{ option.name }}</li></a>
+      {% endfor %}
+    </ul>
+  
+    {# Handling query parameters #}
+    {% set queryparam = "orderBy=-publish-date" %}
+    {% if request.query_dict.type in options_param_list %}
+        {% set queryparam = queryparam ~ "orderBy=-publish-date&type="~request.query_dict.type|urlencode %}
+    {% endif %}
+    {% if request.query_dict.type == "show-all" %}
+        {% set queryparam = queryparam %}
+    {% endif %}
+    
+    <div id="production-posts" class="production-posts">
+      
+      {# Listing #}
+      {% for row in hubdb_table_rows(dynamic_page_hubdb_row.hs_child_table_id, queryparam) %}
+        <div class="production-posts__post" aria-label="{{ row.hs_name }}">
+    
+          {# Production poster #}
+          {% if row.image %}
+          <a class="production-posts__image-wrapper" href="{% if row.direct_url %}{{ row.direct_url }}{% else %}{{ absolute_url }}/{{ row.hs_path }}{% endif %}" aria-label="Post image: {{ row.hs_name }}">
+            <img class="production-posts__image" src="{{ row.image.url }}" loading="lazy" alt="{{ row.hs_name }}">
+          </a>
+          {% endif %}
+        
+        </div>
+        {% endfor %}
+    </div> 
+
+  {% elif dynamic_page_route_level == 2 %}
+
+    {# Title #}
+    {% if dynamic_page_hubdb_row.title %}
+    <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
+    {% endif %}
+    
+    {# Production Image #}
+    {% if dynamic_page_hubdb_row.image %}
+    <img class="production__image" src="{{ dynamic_page_hubdb_row.image.url }}" loading="lazy" alt="{{ dynamic_page_hubdb_row.hs_name }}">
+    {% endif %}
+
+    {# Production Details #}
+    {% if dynamic_page_hubdb_row.details %}
+    <div class="production__details">
+      {{ dynamic_page_hubdb_row.details }}
+    </div>
+    {% endif %}  
+
+  {% endif %}
+
+</section>

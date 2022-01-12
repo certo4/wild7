@@ -1,3 +1,11 @@
+.site-background {
+  background: #2B2D42 !important;
+}
+
+#dot, #dot-blue {
+  display: none;
+}
+
 .productions-index,
 .production-posts-container  {
   display: flex;
@@ -5,10 +13,7 @@
   width: 90%;
   margin: 0 auto;
   justify-content: center;
-  max-width: 700px;
-  padding: 10px;
-  border-radius: 5px;
-  background: white;
+  max-width: 1400px;
 }
 
 .production-posts-container {
@@ -17,7 +22,16 @@
 
 .productions-index__post {
     flex: 0 0 100%;
-    padding: 1px 2px;
+    margin: 50px;
+}
+
+.productions-index__poster-wrapper {
+  padding: 50px;
+  border: 20px solid #383b56;
+}
+
+.productions-index__poster-wrapper:hover {
+  transform: scale(1.1);
 }
 
 .productions-index__poster {

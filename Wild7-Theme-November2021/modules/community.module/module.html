@@ -8,19 +8,7 @@
 
 <section class="productions-index">
   {% if dynamic_page_route_level == 0 %}
-
-    {% for row in parent %}
-      {% for post in hubdb_table_rows(row.hs_child_table_id)|sort(False, False, 'createdAt') %}
-        {{ post|pprint }}<br>
-        {# {% do ray.append(post) %} #}
-        
-      {% endfor %}
-    {% endfor %}
-
-    {{ ray|pprint }}
-
-
-
+    
     {# Listing page #}
 
     {% for row in parent %}
