@@ -13,13 +13,7 @@
       {# Production poster #}
       {% if row.poster %}
       <a class="productions-index__poster-wrapper" href="{{ absolute_url }}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
-        <svg class="left-angle" width="100" viewBox="0 0 105.83333 105.83334">
-          <use xlink:href="#left-angle"></use>
-        </svg>
         <img class="productions-index__poster" src="{{ row.poster.url }}" loading="lazy" alt="{{ row.hs_name }}" width="250">
-        <svg class="right-angle" width="100" height="100" viewBox="0 0 105.83333 105.83334">
-          <use xlink:href="#right-angle" ></use>
-        </svg>
         </a>
       {% endif %}
     
@@ -111,19 +105,3 @@
 
 </section>
 
-{# Frame SVGs #}
-
-<svg>
-  <defs
-     id="defs2" />
-  <symbol id="layer1">
-    <path
-       id="left-angle"
-       style="fill:#383b56;fill-opacity:1;stroke-width:7.58804"
-       d="M 0.03352979,0.02644136 V 15.70507 105.85978 H 15.711939 V 15.70507 H 105.86686 V 0.02644136 H 15.711939 Z" />
-       <path
-       id="right-angle"
-       style="fill:#383b56;fill-opacity:1;stroke-width:7.58804"
-       d="M 105.86686,105.85978 V 90.181156 0.02644557 H 90.188451 V 90.181156 H 0.03352558 V 105.85978 H 90.188451 Z" />
-  </symbol>
-</svg>

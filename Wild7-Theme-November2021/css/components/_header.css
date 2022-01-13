@@ -8,6 +8,7 @@
   left: 0;
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
+  z-index: 9998;
 }
 
 .frosted-glass__animation2 {
@@ -54,6 +55,7 @@
   opacity: .9;
   background-color: rgba(0,0,0,0.8) !important;
   backdrop-filter: saturate(180%) blur(20px);
+  z-index: 9999;
 }
 
 /* Navigation skipper */
