@@ -3,6 +3,10 @@ body {
   word-break: break-word;
 }
 
+::selection {
+  background: #EB3744;
+}
+
 html[lang^="ja"] body,
 html[lang^="zh"] body,
 html[lang^="ko"] body {
