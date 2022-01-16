@@ -16,29 +16,38 @@
   padding-bottom: 100px;
 }
 
-#dot,
-#dot-blue {
+:root {
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}
+
+#dot {
   height: 100px;
   width: 100px;
   background-color: #EB3744;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
-  top: 25%;
-  left: 50%;
-  filter: blur(20px);
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  filter: blur(50px);
   transition: filter 1s;
   z-index: -1;
 }
 
-#dot-blue {
-  height: 50px;
-  width: 50px;
+/* #dot-blue {
+  height: 200px;
+  width: 200px;
   background-color: #73FBFD;
+  border-radius: 50%;
   display: inline-block;
-  top: 35%;
-  left: 50%;
-}
+  position: absolute;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  filter: blur(50px);
+  transition: filter 1s;
+  z-index: -1;
+} */
 
 .animation {
   filter: blur(60px) !important;

@@ -16,6 +16,8 @@
   var frostedGlassMain = document.querySelector('.frosted-glass--mobile-main');
   var frostedGlassSecondary = document.querySelector('.frosted-glass--mobile-categories');
   var headerContainer = document.querySelector('.header__container');
+  var redDot = document.querySelector('#dot');
+  var blueDot = document.querySelector('#dot-blue');
 
   // Functions
 
@@ -54,6 +56,14 @@
       }, 100);
     } 
 
+  }
+
+  // Function to move red and blue dots with mouse
+  function flareMove(e) {
+    redDot.style.setProperty('--mouse-x', e.clientX + "px");
+    blueDot.style.setProperty('--mouse-x', e.clientX + "px");
+    redDot.style.setProperty('--mouse-y', e.clientY + "px");
+    blueDot.style.setProperty('--mouse-y', e.clientY + "px");
   }
 
   // Function to change location of lense flare
@@ -100,9 +110,18 @@
     if (!document.body) {
       return;
     } else {
-
+      let root = document.documentElement;
       // Lense flare animation
       // setInterval(flareMovement, 3000);
+      root.addEventListener("mousemove", e => {
+        root.style.setProperty('--mouse-x', e.clientX + "px");
+        root.style.setProperty('--mouse-y', e.clientY + "px");
+      });
+
+      root.addEventListener("mousemove", e => {
+        root.style.setProperty('--mouse-x', e.clientX + "px");
+        root.style.setProperty('--mouse-y', e.clientY + "px");
+      });
 
       // Function dependent on mobile toggle
       if (mobileToggle) {

@@ -45,14 +45,14 @@
     
 </section>
 
-<section class="production-posts-container">
+<section class="production-posts-container" id="production-posts-container">
 
   {# Movie-specific listing #}
   {% set options = hubdb_table_column(dynamic_page_hubdb_row.hs_child_table_id, 5).options %}
   {% set options_param_list = [] %}
 
   {# Side navigation #}
-  <ul class="side-navigation">
+  <ul class="side-navigation stuck" id="side-navigation">
     <a href="{{ absolute_url }}/{{ post.hs_path }}?type=show-all#production-posts"><li class="type">Show all</li></a>
     {% for option in options %}
       {% do options_param_list.append(option.id) %}
@@ -89,7 +89,7 @@
 
 {% elif dynamic_page_route_level == 2 %}
 
-<section>
+<section class="production-details-container">
     {# Title #}
     {% if dynamic_page_hubdb_row.title %}
     <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
