@@ -111,16 +111,13 @@
       return;
     } else {
       let root = document.documentElement;
+      let fromTop = window.scrollY;
       // Lense flare animation
       // setInterval(flareMovement, 3000);
       root.addEventListener("mousemove", e => {
-        root.style.setProperty('--mouse-x', e.clientX + "px");
+        root.style.setProperty('--mouse-x', e.clientX + fromTop + "px");
         root.style.setProperty('--mouse-y', e.clientY + "px");
-      });
-
-      root.addEventListener("mousemove", e => {
-        root.style.setProperty('--mouse-x', e.clientX + "px");
-        root.style.setProperty('--mouse-y', e.clientY + "px");
+        // redDot.classList.toggle('animation');
       });
 
       // Function dependent on mobile toggle

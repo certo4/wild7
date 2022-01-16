@@ -22,15 +22,15 @@
 }
 
 #dot {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   background-color: #EB3744;
   border-radius: 50%;
   display: inline-block;
-  position: absolute;
+  position: fixed;
   left: var(--mouse-x);
   top: var(--mouse-y);
-  filter: blur(50px);
+  filter: blur(180px);
   transition: filter 1s;
   z-index: -1;
 }
@@ -50,5 +50,7 @@
 } */
 
 .animation {
-  filter: blur(60px) !important;
+  height: 100px !important;
+  width: 100px !important;
+  filter: blur(70px) !important;
 }
