@@ -8,6 +8,7 @@
   left: 0;
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
+  -moz-backdrop-filter: saturate(180%) blur(20px);
   z-index: 9998;
 }
 
@@ -17,7 +18,6 @@
   transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
   -webkit-transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
   height: 355px !important;
-
 }
 
 .frosted-glass__animation {
@@ -26,7 +26,6 @@
   transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
   -webkit-transition: height 1.2s cubic-bezier(.075, .82, .165, 1);
   height: 275px !important;
-
 }
 
 .frosted-glass--mobile-main,
@@ -39,6 +38,7 @@
   left: 0;
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
+  z-index: 97;
 }
 
 @media (max-width: 767px) {

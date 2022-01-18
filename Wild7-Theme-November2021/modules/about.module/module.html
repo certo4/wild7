@@ -1,17 +1,27 @@
-{# TODO: Use flexbox instead of margin to center content #}
 
 <section class="team-wrapper">
       
   {# Listing #}
   {% for team_member in hubdb_table_rows(module.hubdbtable) %}
-    <div class="team-member__card-wrapper" aria-label="{{ team_member.hs_name }}">
-
+    <div class="team-member-container" aria-label="{{ team_member.name }}">
+      
       {# Production poster #}
+      <a class="team-member__image-wrapper" href="{% if team_member.direct_url %}{{ team_member.direct_url }}{% else %}{{ absolute_url }}/{{ team_member.path }}{% endif %}" aria-label="Post image: {{ team_member.name }}">
       {% if team_member.image %}
-      <a class="team-member__image-wrapper" href="{% if team_member.direct_url %}{{ team_member.direct_url }}{% else %}{{ absolute_url }}/{{ team_member.hs_path }}{% endif %}" aria-label="Post image: {{ team_member.hs_name }}">
-        <img class="team-member__image" src="{{ team_member.image.url }}" loading="lazy" alt="{{ team_member.hs_name }}">
+        <img class="team-member__image" src="{{ team_member.image.url }}" loading="lazy" alt="{{ team_member.name }}">
+        {% endif %}
+        
+        <div id="team-member-details-container">
+          {% if team_member.name %}
+          <h2 class="team-member__name">{{ team_member.name }}</h2>
+          {% endif %}
+      
+          {% if team_member.role %}
+          <h3 class="team-member__role">{{ team_member.role }}</h3>
+          {% endif %}
+        </div>
+    
       </a>
-      {% endif %}
     
     </div>
     {% endfor %}

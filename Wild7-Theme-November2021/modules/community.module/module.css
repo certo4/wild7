@@ -55,3 +55,9 @@
     flex: 0 0 calc(100% / 2);
   }
 }
+
+@media (max-width: 768px) {
+  .side-navigation { 
+    display: none;
+  }
+}

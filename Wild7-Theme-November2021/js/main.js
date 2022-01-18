@@ -18,6 +18,9 @@
   var headerContainer = document.querySelector('.header__container');
   var redDot = document.querySelector('#dot');
   var blueDot = document.querySelector('#dot-blue');
+  var frostedGlassFooter = document.querySelector('.footer-frosted-glass');
+  var footer = document.querySelector('.footer');
+  var footerTabIcon = document.querySelector('.footer-tab-wrapper');
 
   // Functions
 
@@ -58,33 +61,13 @@
 
   }
 
-  // Function to move red and blue dots with mouse
-  function flareMove(e) {
-    redDot.style.setProperty('--mouse-x', e.clientX + "px");
-    blueDot.style.setProperty('--mouse-x', e.clientX + "px");
-    redDot.style.setProperty('--mouse-y', e.clientY + "px");
-    blueDot.style.setProperty('--mouse-y', e.clientY + "px");
-  }
+  // Function for toggling mobile navigation
+   function toggleFooterNav() {
+    
+    footer.classList.toggle('hidden-footer');
 
-  // Function to change location of lense flare
-  function flareMovement() {
-    let top = Math.floor(Math.random() * 81) + 10; 
-    let left = Math.floor(Math.random() * 81) + 10;
+    frostedGlassFooter.classList.toggle('footer-frosted-glass-up');
 
-    let topDiff = Math.floor(Math.random() * 30) + 5; 
-    let leftDiff = Math.floor(Math.random() * 30) + 5;
-
-    document.getElementById("dot").style.top = top + "%";
-    document.getElementById("dot").style.left = left + "%";
-
-    void document.getElementById("dot").offsetWidth;
-    void document.getElementById("dot").offsetHeight;
-
-    document.getElementById("dot-blue").style.top = top + topDiff + "%";
-    document.getElementById("dot-blue").style.left = left + leftDiff + "%";
-
-    void document.getElementById("dot-blue").offsetWidth;
-    void document.getElementById("dot-blue").offsetHeight;
   }
 
   // Function to disable the other checkbox inputs on the email subscription system page template
@@ -110,19 +93,23 @@
     if (!document.body) {
       return;
     } else {
+
       let root = document.documentElement;
-      let fromTop = window.scrollY;
+
       // Lense flare animation
-      // setInterval(flareMovement, 3000);
       root.addEventListener("mousemove", e => {
-        root.style.setProperty('--mouse-x', e.clientX + fromTop + "px");
+        root.style.setProperty('--mouse-x', e.clientX + "px");
         root.style.setProperty('--mouse-y', e.clientY + "px");
-        // redDot.classList.toggle('animation');
       });
 
       // Function dependent on mobile toggle
       if (mobileToggle) {
         mobileToggle.addEventListener('click', toggleNav);
+      }
+      
+      // Function to slide up footer
+      if (footerTabIcon) {
+        footerTabIcon.addEventListener('click', toggleFooterNav);
       }
 
       // Function dependent on email unsubscribe from all input
