@@ -141,7 +141,7 @@
 }
 
 .menu__feed-categories {
-  background-color: rgba(0,0,0,.8);
+  background-color: #0a0a0a;
   column-count: 3;
   transition: 1.2s cubic-bezier(.075, .82, .165, 1);
   -webkit-transition: 1.2s cubic-bezier(.075, .82, .165, 1);
@@ -150,6 +150,13 @@
   position: absolute;
   top: 0;
   width: 100vw;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+
+  .menu__feed-categories {
+    background-color: rgba(0,0,0,0.8) !important;
+  }
 }
 
 .menu__feed-categories .menu__link {

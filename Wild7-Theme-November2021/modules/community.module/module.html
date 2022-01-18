@@ -1,55 +1,75 @@
-{# TODO: Create a list that will contain all the posts and order by date 
- regardless of what film they are in #}
 
 {# Getting HubDB data #} 
+
+{# {{ request|pprint }} #}
 
 {% set parent = hubdb_table_rows(dynamic_page_hubdb_table_id) %}
 {% set ray = [] %}
 
-<section class="productions-index">
+  {# Handling query parameters #}
+  {% set queryparam = "orderBy=-publish-date" %}
+    {% if request.query_dict.type in options_param_list %}
+        {% set queryparam = queryparam ~ "orderBy=-publish-date&type="~request.query_dict.type|urlencode %}
+    {% endif %}
+    {% if request.query_dict.type == "show-all" %}
+        {% set queryparam = queryparam %}
+    {% endif %}
+
+<section class="community-index">
   {% if dynamic_page_route_level == 0 %}
     
     {# Listing page #}
 
     {% for row in parent %}
-      <div id="production-posts" class="production-posts">
-      
-      {# Listing #}
+      <div id="community-posts" class="community-posts">
 
-      {% for post in hubdb_table_rows(row.hs_child_table_id) %}
-        <div class="production-posts__post" aria-label="{{ post.hs_name }}">
-    
-          {# Production poster #}
-          {% if post.image %}
-          <a class="production-posts__image-wrapper" href="{% if post.direct_url %}{{ post.direct_url }}{% else %}{{ absolute_url }}/{{ row.hs_path }}/{{ post.hs_path }}{% endif %}" aria-label="Post image: {{ post.hs_name }}">
-            <img class="production-posts__image" src="{{ post.image.url }}" loading="lazy" alt="{{ post.hs_name }}">
-          </a>
-          {% endif %}
+      {% if row.hs_child_table_id %}
+
+        {% if row.title %}
+          <h2 class="community-production-title">{{ row.title }}</h2>
+        {% endif %}
         
+        {# Listing #}
+        <div class="community-posts__wrapper">
+          {% for post in hubdb_table_rows(row.hs_child_table_id, queryparam) %}
+          <div class="community-posts__post" aria-label="{{ post.hs_name }}">
+      
+            {# community poster #}
+            {% if post.image %}
+            <a class="community-posts__image-wrapper" href="{% if post.direct_url %}{{ post.direct_url }}{% else %}{{ absolute_url }}/{{ row.hs_path }}/{{ post.hs_path }}{% endif %}" aria-label="Post image: {{ post.hs_name }}">
+              <img class="community-posts__image" src="{{ post.image.url }}" loading="lazy" alt="{{ post.hs_name }}">
+            </a>
+            {% endif %}
+          
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
+    
+      {% endif %}
+
     </div> 
 
 
     {% endfor %}
-
-    
-
+  </section>
+  
   {% elif dynamic_page_route_level == 2 %}
+
+  <section class="community-details-container">
 
     {# Title #}
     {% if dynamic_page_hubdb_row.title %}
-    <h1 class="production__title">{{ dynamic_page_hubdb_row.title }}</h1>
+    <h1 class="community__title">{{ dynamic_page_hubdb_row.title }}</h1>
     {% endif %}
     
-    {# Production Image #}
+    {# community Image #}
     {% if dynamic_page_hubdb_row.image %}
-    <img class="production__image" src="{{ dynamic_page_hubdb_row.image.url }}" loading="lazy" alt="{{ dynamic_page_hubdb_row.hs_name }}">
+    <img class="community__image" src="{{ dynamic_page_hubdb_row.image.url }}" loading="lazy" alt="{{ dynamic_page_hubdb_row.hs_name }}">
     {% endif %}
 
-    {# Production Details #}
+    {# community Details #}
     {% if dynamic_page_hubdb_row.details %}
-    <div class="production__details">
+    <div class="community__details">
       {{ dynamic_page_hubdb_row.details }}
     </div>
     {% endif %}  

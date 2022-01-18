@@ -33,6 +33,8 @@
 .footer-tab-wrapper {
   display: flex;
   align-items: flex-end;
+  justify-content: flex-end;
+  width: 100vw;
 }
 
 #footer-tab-svg {
@@ -46,7 +48,13 @@
 .footer-content-container {
   height: 80px;
   width: 100vw;
-  background: rgba(0,0,0,0.8);
+  background: black;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .footer-content-container {
+    background-color: rgba(0,0,0,0.8) !important;
+  }
 }
 
 /* .social-nav-container {

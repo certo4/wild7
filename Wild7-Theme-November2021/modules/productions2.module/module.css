@@ -14,7 +14,6 @@
 .production-details-container {
   padding: 50px;
   background: #121218;
-  /* border: 1px solid #23232f; */
   border: 1px solid black;
   max-width: 700px;
 }
@@ -69,7 +68,6 @@
 .productions-index__poster-wrapper {
   padding: 50px;
   border: 2px solid black;
-  /* border: 1px solid #23232f; */
   background: #121218;
   display: block;
   transition: 1s cubic-bezier(.075, .82, .165, 1);
