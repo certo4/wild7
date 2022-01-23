@@ -21,3 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
 });
+
+
+// Flickity Mobile Carousel
+
+var flkty = new Flickity( '.main-gallery', {
+  // options
+  cellAlign: 'center',
+  autoPlay: true,
+  contain: true,
+  draggable: true,
+  wrapAround: true,
+  imagesLoaded: true,
+  lazyLoad: true,
+  prevNextButtons: false
+});

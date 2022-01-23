@@ -1,41 +1,32 @@
+
+{# Flickity Carousel #}
+{{ require_css("https://unpkg.com/flickity@2/dist/flickity.min.css") }}
+{{ require_js("https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js", "footer") }}
+
 {# Getting HubDB data #} 
 
 {% set parent = hubdb_table_rows(dynamic_page_hubdb_table_id) %}
 
 {% if dynamic_page_route_level == 0 %}
+<section class="grid">
+<div class="gallery-container">
+  <div class="main-gallery">
 
-<section class="container">
-  <div class="slider">
+  {% for row in parent %}
+    <div class="productions-index__post gallery-cell {% if loop.index % 2 == 0 %}even{% else %}odd{% endif %}" aria-label="{{ row.hs_name }}">
 
-      {# Links #}
-
-      {% for row in parent %}
+      {# Production poster #}
+      {% if row.poster %}
+      <a class="productions-index__poster-wrapper" href="{{ absolute_url }}/{{ row.hs_path }}" aria-label="Production image: {{ row.hs_name }}">
+        <img class="productions-index__poster" src="{{ row.poster.url }}" loading="lazy" alt="{{ row.hs_name }}" width="250">
+      </a>
+      {% endif %}
     
-        {# Production poster #}
-        {% if row.poster %}
-        <a href="#slide-{{ loop.index }}" >{{ loop.index }}</a>
-        {% endif %}
-      
-      {% endfor %}
+    </div>
+  {% endfor %}
 
-    {# Listing page #}
-
-    <div class="slides">
-    {% for row in parent %}
-
-  
-        {# Production poster #}
-        {% if row.poster %}
-        <div id="slide-{{ loop.index }}">
-          <img class="productions-index__poster" src="{{ row.poster.url }}" loading="lazy" alt="{{ row.hs_name }}" width="250">
-        </div>
-        {% endif %}
-      
-      {% endfor %}
-      </div>
-        
   </div>
-
+  </div>
 </section>
 
 {% elif dynamic_page_route_level == 1 %}
