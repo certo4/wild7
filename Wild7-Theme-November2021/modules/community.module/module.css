@@ -48,11 +48,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
-  .community-posts {
-    padding: 0 20px;
-  }
-
   .community-posts__post {
     flex: 0 0 calc(100% / 2);
   }
