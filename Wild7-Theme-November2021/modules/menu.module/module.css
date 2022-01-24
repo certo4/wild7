@@ -170,6 +170,8 @@
 }
 
 .moved-up2 {
-  transform: translateY(-115%);
-  -webkit-transform:translateY(-115%);
+  /* transform: translateY(-115%);
+  -webkit-transform:translateY(-115%); */
+  transform: translateY(-100%);
+  -webkit-transform:translateY(-100%);
 }
