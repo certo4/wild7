@@ -19,8 +19,8 @@
 .frosted-glass__animation2 {
   /* transform: translateY(-150vw);
   -webkit-transform:translateY(-150vw); */
-  transition: height 1.4s cubic-bezier(.075, .82, .165, 1);
-  -webkit-transition: height 1.4s cubic-bezier(.075, .82, .165, 1);
+  transition: height 1.43s cubic-bezier(.075, .82, .165, 1);
+  -webkit-transition: height 1.43s cubic-bezier(.075, .82, .165, 1);
   height: 355px !important;
 }
 
