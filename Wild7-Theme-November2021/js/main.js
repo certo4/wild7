@@ -21,6 +21,7 @@
   var frostedGlassFooter = document.querySelector('.footer-frosted-glass');
   var footer = document.querySelector('.footer');
   var footerTabIcon = document.querySelector('.footer-tab-wrapper');
+  var mainContent = document.querySelector('#main-content');
 
   // Functions
 
@@ -96,6 +97,16 @@
 
       let root = document.documentElement;
 
+      // On load animation
+      if (mainContent) {
+        mainContent.classList.add('fadeInSlideUp');
+      }
+
+      // Refresh animation
+      window.addEventListener('beforeunload', function (e) {
+        mainContent.classList.remove('fadeInSlideUp');
+      });
+      
       // Lense flare animation
       root.addEventListener("mousemove", e => {
         root.style.setProperty('--mouse-x', e.clientX + "px");
