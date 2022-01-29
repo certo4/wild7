@@ -99,12 +99,12 @@
 
       // On load animation
       if (mainContent) {
-        mainContent.classList.add('fadeInSlideUp');
+        mainContent.classList.add('blurAnimation');
       }
 
       // Refresh animation
       window.addEventListener('beforeunload', function (e) {
-        mainContent.classList.remove('fadeInSlideUp');
+        mainContent.classList.remove('blurAnimation');
       });
       
       // Lense flare animation
