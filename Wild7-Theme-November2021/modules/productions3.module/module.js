@@ -2,19 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Variables
   var prodContainer = document.querySelector('#production-posts-container');
-  var sideNav = document.querySelector('#side-navigation');
+  var sideNavContainer = document.querySelector('.side-navigation-container');
 
   
   // if higher than mobile view and elements exist
-  if (prodContainer && sideNav) {
+  if (prodContainer && sideNavContainer) {
     
     window.addEventListener("scroll", event => {
       let fromTop = window.scrollY;
   
       if ( fromTop > prodContainer.offsetTop) {
-        sideNav.classList.remove('stuck');
+        sideNavContainer.classList.add('slideLeft');
       } else {
-        sideNav.classList.add('stuck');
+        sideNavContainer.classList.remove('slideLeft');
       }
     });
 

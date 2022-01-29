@@ -27,7 +27,7 @@
 } */
 
 .blurAnimation {
-  filter: blur(0px) !important;
+  filter: none !important;
   opacity: 1 !important;
 }
 

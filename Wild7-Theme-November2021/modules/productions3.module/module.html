@@ -59,13 +59,15 @@
   {% set options_param_list = [] %}
 
   {# Side navigation #}
-  <ul class="side-navigation stuck" id="side-navigation">
-    <a href="{{ absolute_url }}/{{ post.hs_path }}?type=show-all#production-posts"><li class="type">Show all</li></a>
-    {% for option in options %}
-      {% do options_param_list.append(option.id) %}
-      <a href="{{ absolute_url }}/{{ post.hs_path }}?type={{ option.id }}#production-posts"><li class="type">{{ option.name }}</li></a>
-    {% endfor %}
-  </ul>
+  <div class="side-navigation-container">
+      <ul class="side-navigation stuck" id="side-navigation">
+        <a href="{{ absolute_url }}/{{ post.hs_path }}?type=show-all#production-posts"><li class="type">Show all</li></a>
+        {% for option in options %}
+          {% do options_param_list.append(option.id) %}
+          <a href="{{ absolute_url }}/{{ post.hs_path }}?type={{ option.id }}#production-posts"><li class="type">{{ option.name }}</li></a>
+        {% endfor %}
+      </ul>
+  </div>
 
   {# Handling query parameters #}
   {% set queryparam = "orderBy=-publish-date" %}
