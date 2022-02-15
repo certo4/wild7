@@ -59,11 +59,11 @@
   left: 0;
 } */
 
-.side-nav-even {
+.side-navigation a li.side-nav-even:hover {
   color: #73fbfd;
 }
 
-.side-nav-odd {
+.side-navigation a li.side-nav-odd:hover {
   color: #eb3744;
 }
 
@@ -195,8 +195,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  .side-navigation { 
+@media (max-width: 1150px) {
+  .side-navigation-container { 
     display: none;
   }
 }
