@@ -1,0 +1,67 @@
+[ {
+  "id" : "menu",
+  "name" : "menu",
+  "display_width" : null,
+  "label" : "Menu",
+  "required" : false,
+  "locked" : false,
+  "type" : "menu",
+  "default" : "default"
+}, {
+  "id" : "max_levels",
+  "name" : "max_levels",
+  "display_width" : null,
+  "label" : "Max levels",
+  "help_text" : "You can only use menus with one level of menu children.",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 1,
+  "max" : 1,
+  "step" : 1,
+  "type" : "number",
+  "default" : 1
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.text",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.text.color",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_value_regex" : null,
+        "operator" : null,
+        "access" : null,
+        "hidden_subfields" : {
+          "opacity" : true
+        }
+      },
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group"
+} ]
