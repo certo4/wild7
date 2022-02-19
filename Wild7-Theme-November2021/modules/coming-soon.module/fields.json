@@ -1,8 +1,13 @@
 [ {
-  "id" : "04aa676c-eca8-6799-3772-4b8d080284d9",
-  "name" : "hubdbtable",
-  "label" : "HubDB table",
+  "id" : "80145947-4b1a-ce5d-0d48-aabf191f6045",
+  "name" : "form_field",
+  "display_width" : null,
+  "label" : "Form",
   "required" : false,
   "locked" : false,
-  "type" : "hubdbtable"
+  "type" : "form",
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form."
+  }
 } ]

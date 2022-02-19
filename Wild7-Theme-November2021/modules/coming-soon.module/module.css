@@ -10,6 +10,10 @@
   flex-direction: column;
 }
 
+#main-content {
+  padding-top: 0px !important;
+}
+
 .coming-soon-container {
   display: flex;
   flex-direction: column;
@@ -22,32 +26,48 @@
   transition: transform 1s ease-in;
   -webkit-transition: 1s ease-in;
 }
+
 .coming-soon__title {
   color: #eb3744;
   font-size: 200px;
-  filter: blur(100px);
+  filter: blur(0px);
   transition: 2s cubic-bezier(.075, .82, .165, 1);
   -webkit-transition: 2s cubic-bezier(.075, .82, .165, 1);
 }
+
 .coming-soon__rotated {
   transform: rotate(15deg);
 }
+
 .coming-soon__blur-out {
   filter: blur(0px);
 }
-@media only screen and (max-width: 1000px) {
+
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .coming-soon__stories, 
+  .coming-soon__perspectives {
+    font-size: 90px;
+  }
+
+  .coming-soon-container h1 {
+    font-size: 150px;
+  }
+}
+
+@media only screen and (max-width: 699px) {
   .coming-soon__stories, 
   .coming-soon__perspectives {
     font-size: 60px;
   }
+
   .coming-soon-container h1 {
-    color: #eb3744;
     font-size: 90px;
   }
 }
 
 .coming-soon-logo {
   width: 100px;
+  margin: 60px 0;
 }
 
 .coming-soon__stories {
@@ -62,68 +82,64 @@
   1px 1px 0 white;
 }
 
-
-
-
-
-
-
-
-
-.team-member-container {
-  flex: 0 0 100%;
-  margin: 50px; 
+.coming-soon-wrapper form {
   display: flex;
-  justify-content: center;
-  flex-direction: column ;
+  flex-direction: row;
+  align-items: flex-end;
+  border-bottom: 1px solid #eb3744;
 }
 
-.team-member__image-wrapper {
-  border: 2px solid black;
-  background: #121218;
-  display: block;
-  padding: 50px;
-  transition: 1s cubic-bezier(.075, .82, .165, 1);
+form input[type=submit], form .hs-button {
+  font-family: 'Bebas Neue', cursive;
+  border: none !important;
+  padding: 0px;
+  background-color: transparent !important;
+  color: #eb3744 !important;
+  letter-spacing: 3px;
+
 }
 
-.team-member__image-wrapper:hover,
-.team-member__image-wrapper:focus {
-  transform: scale(1.1);
+.hs-input.invalid.error {
+  border: none;
 }
 
-.team-member-container:nth-child(odd) .team-member__image-wrapper:hover {
-  border: 2px solid #73fbfd;
+form input[type=email] {
+  color: #eb3744 !important;
+  background-color: transparent;
+  outline: 0 !important;
+  border: none !important;
+  padding: 0.7rem 0.7rem 0px 0px;
 }
 
-.team-member-container:nth-child(even) .team-member__image-wrapper:hover {
-  border: 2px solid #eb4744;
+.hs-form-field {
+  margin-bottom: 0px !important;
 }
 
-@media screen and (min-width: 768px) {
-  .team-member-container {
-    flex: 0 0 calc(100% / 3);
-    margin: 30px;
-  }
+.coming-soon__perspectives {
+  color: #73fbfd;
 }
 
-@media screen and (min-width: 1300px) {
-  .team-member-container {
-    flex: 0 0 calc(100% / 4);
-    margin: 50px;
-  }
+/* .hs-error-msg, 
+form .inputs-list, 
+form label {
+  display: none !important;
+}*/
+
+form label,
+#dot {
+  display: none !important;
 }
 
-.team-member__image {
-  height: auto;
-  max-width: 100%;
-  width: 100%;
-  min-width: 100%;
+.hs-error-msg {
+  display: block !important;
+  position: absolute !important;
 }
 
-.team-member__name,
-.team-member__role {
-  margin: 5px 0;
-  font-size: 28px;
-  text-align: right;
-  color: #494A52;
+form .inputs-list>li {
+  margin: 0px !important;
+}
+
+.submitted-message {
+  color: white;
+font-family: 'Bebas Neue', cursive;
 }
