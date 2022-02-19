@@ -1,0 +1,234 @@
+
+
+.production-details-container,
+.production-posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 1400px;
+  position: relative;
+}
+
+.production-details-container {
+  padding: 50px;
+  background: #121218;
+  border: 1px solid black;
+  max-width: 700px;
+}
+
+@media screen and (max-width: 767px) {
+  .production-details-container {
+    padding: 10px;
+  }
+
+  .productions-index__post {
+    margin: none;
+  }
+}
+
+.side-navigation-container {
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  padding-top: 44px;
+  left: 0;
+  border-right: 2px solid black;
+  background: #121218;
+  display: flex;
+  align-items: center;
+  transform: translateX(-100%) !important;
+  transition: cubic-bezier(.075,.82,.165,1) 1s;
+}
+
+.side-navigation {
+  list-style: none;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.slideLeft {
+  transform: translateX(0) !important;
+}
+
+/* .stuck {
+  position: absolute;
+  top: 48px;
+  left: 0;
+} */
+
+.side-navigation a li.side-nav-even:hover {
+  color: #73fbfd;
+}
+
+.side-navigation a li.side-nav-odd:hover {
+  color: #eb3744;
+}
+
+.side-navigation a li {
+  font-family: Bebas Neue;
+  color: #494a52;
+}
+
+.production-posts-container {
+  margin: 100px 0 0 0;
+  width: 100%;
+  max-width: unset;
+}
+
+.productions-index__post:nth-child(even) .productions-index__poster-wrapper:hover,
+.slick-current.even .productions-index__poster-wrapper {
+  border: 1px solid #eb3744;
+}
+
+.productions-index__post:nth-child(odd) .productions-index__poster-wrapper:hover,
+.slick-current.odd .productions-index__poster-wrapper {
+  border: 1px solid #73fbfd;
+}
+
+.productions-index__post {
+  flex: 0 0 100%;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.productions-index__poster-wrapper {
+  padding: 50px;
+  border: 2px solid black;
+  background: #121218;
+  display: block;
+  transition: 1s cubic-bezier(.075, .82, .165, 1);
+}
+
+@media screen and (max-width: 767px) {
+  .productions-index__post {
+    margin: 30px 35px 30px 38px;
+  }
+
+  .productions-index__poster-wrapper {
+    padding: 30px;
+  }
+}
+
+.productions-index__poster-wrapper:hover,
+.productions-index__poster-wrapper:focus,
+.slick-current .productions-index__poster-wrapper {
+  transform: scale(1.1);
+}
+
+.productions-index__poster {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .productions-index__post {
+    flex: 0 0 calc(100% / 3);
+    margin: 50px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .productions-index__post {
+    flex: 0 0 calc(100% / 4);
+  }
+}
+
+/* Production level */
+
+.production__title {
+  font-size: 1.25rem;
+}
+
+.production__image {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+}
+
+.production__details p {
+  font-size: 18px;
+  margin-top: 32px;
+}
+
+.productions-index ul a {
+  font-family: 'Bebas Neue',cursive !important;
+}
+
+.production-posts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 700px;
+}
+
+.production-posts__post {
+  flex: 0 0 calc(100% / 3);
+  padding: 1px 1px;
+  height: 200px;
+}
+
+.production-posts__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .production-posts {
+    padding: 0 20px;
+  }
+
+  .production-posts__post {
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media (max-width: 1150px) {
+  .side-navigation-container { 
+    display: none;
+  }
+}
+
+/* Carousel Styling */
+
+.flickity-page-dots {
+  bottom: -65px !important;
+}
+
+.flickity-page-dots .dot {
+  height: 4px !important;
+  width: 40px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .flickity-page-dots {
+    display: none;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .gallery-container {
+    grid-area: main;
+  }
+
+  .grid {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: "."
+                        "main"
+                        ".";
+  }
+}
