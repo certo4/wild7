@@ -11,8 +11,7 @@
 {% set parent = hubdb_table_rows(dynamic_page_hubdb_table_id) %}
 
 {% if dynamic_page_route_level == 0 %}
-<section class="grid">
-<div class="gallery-container">
+<section class="gallery-container">
   <div class="main-gallery">
 
   {% for row in parent %}
@@ -29,7 +28,7 @@
   {% endfor %}
 
   </div>
-  </div>
+  
 </section>
 
 {% elif dynamic_page_route_level == 1 %}

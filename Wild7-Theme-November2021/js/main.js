@@ -23,6 +23,10 @@
   var footerTabIcon = document.querySelector('.footer-tab-wrapper');
   var mainContent = document.querySelector('#main-content');
 
+  // Variables Home
+  var prodContainer = document.querySelector('#production-posts-container');
+  var sideNavContainer = document.querySelector('.side-navigation-container');
+
   // Functions
 
   // Function for executing code on document ready
@@ -126,6 +130,21 @@
       // Function dependent on email unsubscribe from all input
       if (emailGlobalUnsub) {
         emailGlobalUnsub.addEventListener('change', toggleDisabled);
+      }
+
+      // if higher than mobile view and elements exist
+      if (prodContainer && sideNavContainer) {
+        
+        window.addEventListener("scroll", event => {
+          let fromTop = window.scrollY;
+      
+          if ( fromTop > prodContainer.offsetTop) {
+            sideNavContainer.classList.add('slideLeft');
+          } else {
+            sideNavContainer.classList.remove('slideLeft');
+          }
+        });
+
       }
     }
   });
