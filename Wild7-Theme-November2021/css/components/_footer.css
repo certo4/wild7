@@ -249,7 +249,7 @@ footer .submitted-message {
   footer form input[type=submit],
   footer form .hs-button {
     min-width: 60px;
-    font-size: 12px !important;
+    font-size: 16px !important;
   }
 
   footer form input[type=email] {
@@ -263,5 +263,22 @@ footer .submitted-message {
 
   .footer-copyright {
     flex-grow: 0;
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .footer-copyright__logo {
+    align-self: center;
+  }
+
+  .footer-copyright__year {
+    font-size: 12px;
+    padding-left: 5px;
+  }
+
+  .productions-index__poster {
+    max-width: 130%;
+    width: 130%;
+    min-width: 130%;
   }
 }

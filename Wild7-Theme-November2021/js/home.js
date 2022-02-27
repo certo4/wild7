@@ -3,6 +3,7 @@ $(document).ready(function() {
       dots: false,
       infinite: true,
       centerMode: true,
+      lazyLoad: 'ondemand',
       arrows: false,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -23,7 +24,9 @@ $(document).ready(function() {
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 1
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
           }
         }
       ]

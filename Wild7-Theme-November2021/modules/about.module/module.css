@@ -16,12 +16,23 @@
   flex-direction: column;
 }
 
+#team-member-details-container {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 10px auto 0px auto;
+  width: 200px;
+}
+
 .team-member__image-wrapper {
   border: 2px solid black;
   background: #121218;
-  display: block;
+  display: flex;
   padding: 50px;
   transition: 1s cubic-bezier(.075, .82, .165, 1);
+  flex-direction: column;
+  justify-content: center;
 }
 
 .team-member__image-wrapper:hover,
@@ -56,6 +67,7 @@
   max-width: 200px;
   width: 100%;
   min-width: 200px;
+  margin: 0 auto;
 }
 
 .team-member__name,
