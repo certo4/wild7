@@ -62,13 +62,13 @@
 
   {# Side navigation #}
   <div class="side-navigation-container">
-      <ul class="side-navigation stuck" id="side-navigation">
-        <a href="{{ absolute_url }}/{{ post.hs_path }}?type=show-all#production-posts"><li class="type side-nav-odd">Show all</li></a>
-        {% for option in options %}
-          {% do options_param_list.append(option.id) %}
-          <a href="{{ absolute_url }}/{{ post.hs_path }}?type={{ option.id }}#production-posts"><li class="type {% if loop.index % 2 == 0 %}side-nav-odd{% else %}side-nav-even{% endif %}">{{ option.name }}</li></a>
-        {% endfor %}
-      </ul>
+    <ul class="side-navigation stuck" id="side-navigation">
+      <a href="{{ absolute_url }}/{{ post.hs_path }}?type=show-all#production-posts"><li class="type side-nav-odd">Show all</li></a>
+      {% for option in options %}
+        {% do options_param_list.append(option.id) %}
+        <a href="{{ absolute_url }}/{{ post.hs_path }}?type={{ option.id }}#production-posts"><li class="type {% if loop.index % 2 == 0 %}side-nav-odd{% else %}side-nav-even{% endif %}">{{ option.name }}</li></a>
+      {% endfor %}
+    </ul>
   </div>
 
   {# Handling query parameters #}

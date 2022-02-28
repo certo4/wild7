@@ -1,0 +1,12 @@
+[ {
+  "name": "bg_image",
+  "label": "Background image",
+  "required": false,
+  "type": "backgroundimage",
+  "default": {
+      "src": "https://example.com/img.png",
+      "background_position": "MIDDLE_CENTER",
+      "background_size": "cover"
+  }
+}
+]

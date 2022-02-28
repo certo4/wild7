@@ -1,0 +1,36 @@
+#main-content { 
+  padding-top: 0px;
+  padding-bottom: 100px;
+}
+
+.parallax-gif-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://fs.hubspotusercontent00.net/hubfs/20977602/w7-intro.gif');
+  background-size: cover;
+  background-color: black;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .parallax-gif-container {
+    background-size: contain;
+    background-repeat: repeat;
+  }
+}
+
+.home-slideUp {
+  transform: translateY(-100%) !important;
+}
+
+.home-slideDown {
+  transform: translateY(100%) !important;
+}
+
+.frosted-glass__home-animation {
+  height: 1px;
+}

@@ -13,6 +13,11 @@
   position: relative;
 }
 
+.production-posts-container {
+  flex-direction: column;
+  align-items: center;
+}
+
 .production-details-container {
   padding: 50px;
   background: #121218;
@@ -75,7 +80,7 @@
 }
 
 .production-posts-container {
-  margin: 100px 0 0 0;
+  margin-top: 100px;
   width: 100%;
   max-width: unset;
 }
@@ -204,24 +209,39 @@
 
 /* Carousel Styling */
 
-.flickity-page-dots {
-  bottom: -65px !important;
-}
-
-.flickity-page-dots .dot {
-  height: 4px !important;
-  width: 40px !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-}
-
-@media screen and (min-width: 768px) {
-  .flickity-page-dots {
-    display: none;
+@media screen and (max-width: 768px) {
+  .productions-index__poster-wrapper {
+    border: 0px;
   }
 }
 
 .gallery-container {
   max-width: 2500px;
   margin: 0 auto;
+}
+
+.slick-dots {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding-inline-start: 0px;
+  margin: 50px auto;
+}
+
+.slick-dots li button { 
+  font-size: 0;
+  height: 4px;
+  width: 40px;
+  margin: 3px;
+  border-radius: 0;
+  padding: 0px;
+  border: none;
+  background-color: #494a52;
+  outline: none;
+} 
+
+.slick-active button {
+  background-color: #26272b !important;
 }
