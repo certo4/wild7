@@ -7,7 +7,7 @@
 }
 
 .error-page:before {
-  color: #F3F6F9;
+  color: #494a52;
   content: attr(data-error);
   font-size: 40vw;
   font-weight: bold;
@@ -23,6 +23,20 @@
   .error-page:before {
     font-size: 20rem;
   }
+}
+
+.error-page button {
+  border: 1px solid #eb3744 !important;
+  background-color: #eb3744 !important;
+  font-family: 'Bebas Neue',cursive !important;
+  color: #fff !important;
+}
+
+.error-page button:hover {
+  font-family: 'Bebas Neue',cursive !important;
+  border: 1px solid #73fbfd !important;
+  background-color: #73fbfd !important;
+  color: #fff !important;
 }
 
 /* System pages */

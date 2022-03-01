@@ -53,7 +53,7 @@
           }
         },
         "default": {
-          "fallback": "sans-serif",
+          "fallback": "cursive",
           "font": "Lato",
           "font_set": "GOOGLE"
         }
@@ -504,7 +504,7 @@
                 },
                 "opacity": 100,
                 "style": "solid",
-                "color": "#494A52"
+                "color": "#eb3744"
               },
               "right": {
                 "width": {
@@ -513,7 +513,7 @@
                 },
                 "opacity": 100,
                 "style": "solid",
-                "color": "#494A52"
+                "color": "#eb3744"
               },
               "bottom": {
                 "width": {
@@ -522,7 +522,7 @@
                 },
                 "opacity": 100,
                 "style": "solid",
-                "color": "#494A52"
+                "color": "#eb3744"
               },
               "left": {
                 "width": {
@@ -531,7 +531,7 @@
                 },
                 "opacity": 100,
                 "style": "solid",
-                "color": "#494A52"
+                "color": "#eb3744"
               }
             }
           }
